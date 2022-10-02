@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import "./variables.scss"
+
+// import {Footer} from "./components/Footer/Footer";
+import {Routes, Route} from "react-router-dom";
+// import {LoginPage} from "./pages/LoginPage/LoginPage";
+import {useEffect} from "react";
+import { useNavigate } from 'react-router-dom';
+import {ConverterPage} from "./pages/ConverterPage/ConverterPage";
+import {CurrenciesPage} from "./pages/CurrenciesPage/CurrenciesPage";
+// import {ResetPasswordPage} from "./pages/ResetPasswordPage/ResetPasswordPage";
 
 function App() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    navigate("/converterPage")
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*<Header/>*/}
+      <div className={`main`}>
+        <Routes>
+          <Route path="/converterPage" element={<ConverterPage/>} />
+          <Route path="/currenciesPage" element={<CurrenciesPage/>} />
+        </Routes>
+      </div>
+      {/*<Footer/>*/}
+
     </div>
   );
 }

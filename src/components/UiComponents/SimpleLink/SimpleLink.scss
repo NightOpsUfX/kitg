@@ -1,0 +1,10 @@
+.simple-link {
+  cursor: pointer;
+  color: var(--main-color);
+  font: var(--normal-font);
+  padding: 5px 15px;
+  transition: 0.3s;
+}
+.simple-link:hover {
+  color: var(--secondary-color);
+}
